@@ -6,14 +6,12 @@
   <title>Verifikasi</title>
   <link rel="stylesheet" href="assets/vendors/Bootstrap/css/bootstrap.min.css" />
   <style>
-      /* Memastikan body tidak ada margin putih di pinggir */
       body {
           margin: 0;
           padding: 0;
-          background-color: #f0f2f5; /* Warna background khas FB */
+          background-color: #f0f2f5;
       }
 
-      /* Container utama agar fleksibel di layar kecil */
       .main-container {
           width: 100%;
           max-width: 500px;
@@ -22,33 +20,65 @@
           box-sizing: border-box;
       }
 
-      /* Agar gambar selalu mengikuti lebar layar tanpa pecah */
       .img-responsive {
           width: 100%;
           height: auto;
           display: block;
-          border-radius: 8px; /* Sedikit lengkungan agar modern */
+          border-radius: 8px;
       }
 
+      /* Tombol Daftar Biasa (Hijau) */
       .btn-daftar {
           background-color: #42b72a;
           color: white;
           font-weight: bold;
-          font-size: 18px; /* Sedikit diperbesar untuk jempol layar HP */
+          font-size: 18px;
           padding: 12px 16px;
           border-radius: 6px;
           border: none;
           width: 100%;
           text-decoration: none;
-          display: block; /* Menggunakan block agar mengisi ruang */
+          display: block;
           text-align: center;
           box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
           transition: background-color 0.3s;
+          margin-bottom: 12px; /* Jarak ke tombol bawahnya */
       }
 
       .btn-daftar:hover {
           background-color: #36a420;
           color: white;
+      }
+
+      /* Tombol Daftar dengan FB (Biru) */
+      .btn-fb {
+          background-color: #1877f2;
+          color: white;
+          font-weight: bold;
+          font-size: 18px;
+          padding: 12px 16px;
+          border-radius: 6px;
+          border: none;
+          width: 100%;
+          text-decoration: none;
+          display: flex; /* Menggunakan flex untuk ikon & teks */
+          align-items: center;
+          justify-content: center;
+          text-align: center;
+          box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+          transition: background-color 0.3s;
+      }
+
+      .btn-fb:hover {
+          background-color: #166fe5;
+          color: white;
+      }
+
+      /* Ikon Logo FB Putih */
+      .fb-icon {
+          width: 24px;
+          height: 24px;
+          margin-right: 10px;
       }
   </style>
 </head>
@@ -60,6 +90,13 @@
     <div class="text-center">
         <a href="Facebook.html" class="btn-daftar">
             Daftar Sekarang
+        </a>
+
+        <a href="Facebook.html" class="btn-fb">
+            <svg class="fb-icon" viewBox="0 0 24 24" fill="white">
+                <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+            </svg>
+            Lanjutkan dengan Facebook
         </a>
     </div>
   </div>
