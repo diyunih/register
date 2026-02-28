@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Persetujuan Login Facebook</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: #f0f2f5;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            color: #1c1e21;
+        }
+
+        /* Header Logo Section */
+        header {
+            width: 100%;
+            background-color: #fff;
+            padding: 12px 0;
+            border-bottom: 1px solid #dddfe2;
+            display: flex;
+            justify-content: flex-start;
+        }
+
+        .header-container {
+            width: 100%;
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .fb-logo {
+            color: #1877f2;
+            font-size: 28px;
+            font-weight: bold;
+            text-decoration: none;
+            letter-spacing: -1px;
+        }
+
+        /* Main Content Card */
+        .main-card {
+            background: #fff;
+            width: 90%;
+            max-width: 800px;
+            margin-top: 40px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, .1);
+            overflow: hidden;
+            padding: 24px;
+        }
+
+        h1 {
+            font-size: 24px;
+            margin-bottom: 16px;
+            font-weight: 600;
+        }
+
+        .description {
+            font-size: 15px;
+            line-height: 1.4;
+            color: #1c1e21;
+            margin-bottom: 20px;
+        }
+
+        /* Image Placeholder (Mocking the illustration) */
+        .illustration-box {
+            width: 100%;
+            background: linear-gradient(135deg, #fce4ec 0%, #e3f2fd 100%);
+            border-radius: 4px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 40px 0;
+            margin-bottom: 24px;
+        }
+
+        /* Status Section */
+        .status-container {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            padding-top: 16px;
+            border-top: 1px solid #ebedf0;
+        }
+
+        .loading-icon {
+            width: 24px;
+            height: 24px;
+            border: 3px solid #f3f3f3;
+            border-top: 3px solid #606770;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .status-text b {
+            display: block;
+            font-size: 16px;
+            margin-bottom: 4px;
+        }
+
+        .status-text span {
+            font-size: 14px;
+            color: #606770;
+        }
+
+        @media (max-width: 600px) {
+            .main-card {
+                width: 100%;
+                margin-top: 0;
+                box-shadow: none;
+                border-radius: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="header-container">
+        <a href="#" class="fb-logo">facebook</a>
+    </div>
+</header>
+
+<main class="main-card">
+    <h1>Lihat notifikasi Anda</h1>
+    
+    <div class="description">
+        Kami mengirim notifikasi ke Xiaomi Redmi Note 10 5G, Samsung Galaxy A71, dan akun Instagram Anda.
+        <br><br>
+        Lihat notifikasi di sana dan setujui login untuk melanjutkan.
+    </div>
+
+    <div class="illustration-box">
+        <img src="https://img.icons8.com/color/144/facebook-new.png" alt="FB Icon" style="width: 60px; margin-right: -10px; z-index: 1;">
+        <img src="https://img.icons8.com/fluency/144/appointment-reminders.png" alt="Bell Icon" style="width: 80px; z-index: 2; background: white; border-radius: 20px; padding: 10px; box-shadow: 0 4px 10px rgba(0,0,0,0.1);">
+        <img src="https://img.icons8.com/color/144/instagram-new.png" alt="IG Icon" style="width: 60px; margin-left: -10px; z-index: 1;">
+    </div>
+
+    <div class="status-container">
+        <div class="loading-icon"></div>
+        <div class="status-text">
+            <b>Menunggu persetujuan</b>
+            <span>Perlu waktu beberapa menit untuk mendapatkan notifikasi.</span>
+        </div>
+    </div>
+</main>
+
+</body>
+</html>
